@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/menu_even"
+            android:title="@string/even_numbers" />
+        <item
+            android:id="@+id/menu_odd"
+            android:title="@string/odd_numbers" />
+        <item
+            android:id="@+id/menu_prime"
+            android:title="@string/prime_numbers" />
+        <item
+            android:id="@+id/menu_multiples_of_three"
+            android:title="@string/multiples_of_3" />
+        <item
+            android:id="@+id/menu_perfect_squares"
+            android:title="@string/perfect_squares" />
+        <item
+            android:id="@+id/menu_fibonacci"
+            android:title="@string/fibonacci_numbers" />
+        <item
+            android:id="@+id/menu_palindrome"
+            android:title="@string/palindrome_numbers" />
+
+</menu>
