@@ -48,24 +48,9 @@ class MainActivity : AppCompatActivity() {
                 showSnackbar("prime")
             }
 
-            R.id.menu_multiples_of_three -> {
-                adapter.numberType = NumbersAdapter.NumberType.MULTIPLES_OF_THREE
-                showSnackbar("multiples_of_three")
-            }
-
-            R.id.menu_perfect_squares -> {
-                adapter.numberType = NumbersAdapter.NumberType.PERFECT_SQUARE
-                showSnackbar("perfect_squares")
-            }
-
             R.id.menu_fibonacci -> {
                 adapter.numberType = NumbersAdapter.NumberType.FIBONACCI
                 showSnackbar("fibonacci")
-            }
-
-            R.id.menu_palindrome -> {
-                adapter.numberType = NumbersAdapter.NumberType.PALINDROME
-                showSnackbar("palindrome")
             }
 
             else -> adapter.numberType = NumbersAdapter.NumberType.ALL
@@ -79,12 +64,7 @@ class MainActivity : AppCompatActivity() {
             "even" -> (1..100).count { it % 2 == 0 }
             "odd" -> (1..100).count { it % 2 != 0 }
             "prime" -> (1..100).count { Utils.isPrime(it) }
-            "multiples_of_three" -> (1..100).count { it % 3 == 0 }
-            "perfect_squares" -> (1..100).count {
-                Math.sqrt(it.toDouble()).toInt() * Math.sqrt(it.toDouble()).toInt() == it
-            }
             "fibonacci" -> (1..100).count { Utils.isFibonacci(it) }
-            "palindrome" -> (1..100).count { Utils.isPalindrome(it) }
             else -> 0
         }
 
@@ -92,10 +72,7 @@ class MainActivity : AppCompatActivity() {
             "even" -> getString(R.string.total_even_numbers_is, count)
             "odd" -> getString(R.string.total_odd_numbers_is, count)
             "prime" -> getString(R.string.total_prime_numbers_is, count)
-            "multiples_of_three" -> getString(R.string.total_multiples_of_3_is, count)
-            "perfect_squares" -> getString(R.string.total_perfect_squares_is, count)
             "fibonacci" -> getString(R.string.total_fibonacci_numbers_is, count)
-            "palindrome" -> getString(R.string.total_palindrome_numbers_is, count)
             else -> ""
         }
 

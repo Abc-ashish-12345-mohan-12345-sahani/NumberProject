@@ -20,8 +20,7 @@ class NumbersAdapter(private val items: List<Int>, private val context: Context)
 
     override fun onBindViewHolder(holder: NumberViewHolder, position: Int) {
         val number = items[position]
-        val word = Utils.numberToWord(number)
-        holder.binding.numberText.text = "$number - $word"
+        holder.binding.numberText.text = "$number"
 
         when {
             numberType == NumberType.EVEN && number % 2 == 0 -> {
@@ -40,18 +39,6 @@ class NumbersAdapter(private val items: List<Int>, private val context: Context)
                 holder.binding.constraintLayout.setBackgroundColor(context.resources.getColor(R.color.light_purple))
             }
 
-            numberType == NumberType.PALINDROME && Utils.isPalindrome(number) -> {
-                holder.binding.constraintLayout.setBackgroundColor(context.resources.getColor(R.color.light_red))
-            }
-
-            numberType == NumberType.PERFECT_SQUARE && Utils.isPerfectSquare(number) -> {
-                holder.binding.constraintLayout.setBackgroundColor(context.resources.getColor(R.color.light_sky_blue))
-            }
-
-            numberType == NumberType.MULTIPLES_OF_THREE && number % 3 == 0 -> {
-                holder.binding.constraintLayout.setBackgroundColor(context.resources.getColor(R.color.light_pink))
-            }
-
             else -> {
                 holder.binding.constraintLayout.setBackgroundColor(context.resources.getColor(R.color.white))
             }
@@ -63,6 +50,6 @@ class NumbersAdapter(private val items: List<Int>, private val context: Context)
     }
 
     enum class NumberType {
-        EVEN, ODD, PRIME, FIBONACCI, PERFECT_SQUARE, PALINDROME, MULTIPLES_OF_THREE, ALL
+        EVEN, ODD, PRIME, FIBONACCI, ALL
     }
 }
